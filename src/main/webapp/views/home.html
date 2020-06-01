@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h3>Home</h3>
+<form th:action="@{/login}" method="POST" th:object="${login}">
+    <fieldset>
+        <legend>Login</legend>
+        <table>
+            <tr>
+                <td><label th:for="${#ids.next('account')}">Account</label></td>
+                <td><input type="text" th:field="*{account}" th:id="${#ids.next('account')}"></td>
+            </tr>
+            <tr>
+                <td><label th:for="${#ids.next('password')}">Password</label></td>
+                <td><input type="text" th:field="*{password}" th:id="${#ids.next('password')}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Login"></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>
